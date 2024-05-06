@@ -9,7 +9,7 @@ import net.serenitybdd.core.pages.PageObject;
 import net.serenitybdd.core.pages.WebElementFacade;
 import net.serenitybdd.screenplay.targets.Target;
 
-public class PatientsObject extends PageObject {
+public class ClinicianObject extends PageObject {
 
 	public static Target SELECT_CASE = Target.the("select case")
 			.locatedBy("(//span[@class='text-sm'])[2]");

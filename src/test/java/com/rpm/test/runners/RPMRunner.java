@@ -8,7 +8,7 @@ import net.serenitybdd.cucumber.CucumberWithSerenity;
 
 @RunWith(CucumberWithSerenity.class)
 @CucumberOptions(
-        features = {"src/test/resources/features/patient_case.feature"},
+        features = {"src/test/resources/features/clinician_login.feature"},
         plugin = {"pretty"},
         glue = {"com.rpm.test"},
         tags = "@SmokeTest1",

@@ -1,18 +1,12 @@
 package com.rpm.test.tasks.ui.rpm;
 
-import java.util.Map;
-
-import com.rpm.test.page_objects.PatientsObject;
-import com.rpm.test.utils.ConvertCucumberDataTable;
-
-import io.cucumber.datatable.DataTable;
+import com.rpm.test.page_objects.ClinicianObject;
 import net.serenitybdd.core.steps.UIInteractions;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.actions.Enter;
 import net.serenitybdd.screenplay.actions.Scroll;
-import net.serenitybdd.screenplay.actions.SelectFromOptions;
 
 public class Case extends UIInteractions implements Task {
 
@@ -24,55 +18,55 @@ public class Case extends UIInteractions implements Task {
 	@Override
 	public <T extends Actor> void performAs(T actor) {
 		
-		actor.attemptsTo(Click.on(PatientsObject.COMPLETE_DOCUMENTATION));
+		actor.attemptsTo(Click.on(ClinicianObject.COMPLETE_DOCUMENTATION));
 		waitABit(1000);
 		
-		actor.attemptsTo(Click.on(PatientsObject.ENCOUNTER));
+		actor.attemptsTo(Click.on(ClinicianObject.ENCOUNTER));
 		waitABit(1000);
 		
-		actor.attemptsTo(Click.on(PatientsObject.ENCOUNTER_TYPE));
+		actor.attemptsTo(Click.on(ClinicianObject.ENCOUNTER_TYPE));
 		waitABit(1000);
 				
-		actor.attemptsTo(Enter.keyValues("Condition is good").into(PatientsObject.DIAGNOSIS));
+		actor.attemptsTo(Enter.keyValues("Condition is good").into(ClinicianObject.DIAGNOSIS));
 		waitABit(1000);
 		
-		actor.attemptsTo(Click.on(PatientsObject.ADD_DIAGNOSIS));
+		actor.attemptsTo(Click.on(ClinicianObject.ADD_DIAGNOSIS));
 		waitABit(1000);
 		
-		actor.attemptsTo(Scroll.to(PatientsObject.PREVIEW_DOCUMENTATION));
+		actor.attemptsTo(Scroll.to(ClinicianObject.PREVIEW_DOCUMENTATION));
 		waitABit(1000);
 		
-		actor.attemptsTo(Enter.keyValues("Everything is good").into(PatientsObject.PRACTITIONER_FINDING));
+		actor.attemptsTo(Enter.keyValues("Everything is good").into(ClinicianObject.PRACTITIONER_FINDING));
 		waitABit(1000);
 		
-		actor.attemptsTo(Click.on(PatientsObject.ACTION));
+		actor.attemptsTo(Click.on(ClinicianObject.ACTION));
 		waitABit(1000);
 		
-		actor.attemptsTo(Click.on(PatientsObject.SELECT_ACTION));
+		actor.attemptsTo(Click.on(ClinicianObject.SELECT_ACTION));
 		waitABit(1000);
 		
-		actor.attemptsTo(Click.on(PatientsObject.URGENCY));
+		actor.attemptsTo(Click.on(ClinicianObject.URGENCY));
 		waitABit(1000);
 		
-		actor.attemptsTo(Click.on(PatientsObject.SELECT_URGENCY));
+		actor.attemptsTo(Click.on(ClinicianObject.SELECT_URGENCY));
 		waitABit(1000);
 		
-		actor.attemptsTo(Enter.keyValues("Additional Comment is fine").into(PatientsObject.ADDITIONAL_COMMENT));
+		actor.attemptsTo(Enter.keyValues("Additional Comment is fine").into(ClinicianObject.ADDITIONAL_COMMENT));
 		waitABit(1000);
 		
-		actor.attemptsTo(Click.on(PatientsObject.PREVIEW_DOCUMENTATION));
+		actor.attemptsTo(Click.on(ClinicianObject.PREVIEW_DOCUMENTATION));
 		waitABit(3000);
 		
-		actor.attemptsTo(Scroll.to(PatientsObject.SIGN_OFF));
+		actor.attemptsTo(Scroll.to(ClinicianObject.SIGN_OFF));
 		waitABit(1000);
 		
-		actor.attemptsTo(Click.on(PatientsObject.SIGN_OFF));
+		actor.attemptsTo(Click.on(ClinicianObject.SIGN_OFF));
 		waitABit(2000);
 		
-		actor.attemptsTo(Click.on(PatientsObject.E_SIGN));
+		actor.attemptsTo(Click.on(ClinicianObject.E_SIGN));
 		waitABit(4000);
 		
-		actor.attemptsTo(Click.on(PatientsObject.CROSS_ICON));
+		actor.attemptsTo(Click.on(ClinicianObject.CROSS_ICON));
 		waitABit(2000);
 	}
 

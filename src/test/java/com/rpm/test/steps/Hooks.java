@@ -27,7 +27,7 @@ public class Hooks {
     @Managed
     private EnvironmentVariables environmentVariables;
 
-    private Actor agencyAdmin;
+    private Actor Clinician;
 
     public Connection connection;
 
@@ -35,8 +35,8 @@ public class Hooks {
     @Before(order = 1)
     public void setup() {
         OnStage.setTheStage(new OnlineCast());
-        agencyAdmin = OnStage.theActorCalled("AA");
-        agencyAdmin.whoCan(BrowseTheWeb.with(userBrowser));
+        Clinician = OnStage.theActorCalled("Clinician");
+        Clinician.whoCan(BrowseTheWeb.with(userBrowser));
     }
 
     @After(order = 1)
@@ -45,27 +45,4 @@ public class Hooks {
         userBrowser.quit();
     }
 
-	/*
-	 * @Before(order = 1) public void db_setup() { EnvironmentVariables
-	 * environmentVariables = SerenityInfrastructure.getEnvironmentVariables();
-	 * String dbUserName =
-	 * EnvironmentSpecificConfiguration.from(environmentVariables).getProperty(
-	 * "dm.db.username"); String dbPassword =
-	 * EnvironmentSpecificConfiguration.from(environmentVariables).getProperty(
-	 * "dm.db.password"); String dbIP =
-	 * EnvironmentSpecificConfiguration.from(environmentVariables).getProperty(
-	 * "dm.db.ip"); String dbPort =
-	 * EnvironmentSpecificConfiguration.from(environmentVariables).getProperty(
-	 * "dm.db.port"); String dbName =
-	 * EnvironmentSpecificConfiguration.from(environmentVariables).getProperty(
-	 * "dm.db.name"); try { connection = DBHelper.getOracleConnection(dbIP, dbPort,
-	 * dbName, dbUserName, dbPassword); agencyAdmin.remember("connection",
-	 * connection); } catch (Exception dbe) {
-	 * logger.severe("Unable to retrieve the data from DB - " + dbe); } }
-	 * 
-	 * @After(order = 1) public void db_tearDown() { try { if (connection != null)
-	 * connection.close(); } catch (SQLException e) { e.printStackTrace(); } finally
-	 * { connection = null; } }
-	 */
-    
 }
